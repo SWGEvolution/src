@@ -357,7 +357,20 @@ public:
 		SP_atat = 227,
 		SP_geonosian = 228,
 		SP_veractyle = 229,
-		Species_Last = SP_veractyle,
+		//add aditional species
+		SP_chiss = 230,
+		SP_nautolan = 231,
+		SP_nightsister = 232,
+		SP_smc = 233,
+		SP_togruta =234,
+		SP_cerean =235,
+		SP_kel_dor =236,
+		SP_jenet =237,
+		SP_kadassa =238,
+		SP_neimoidian =239,
+		SP_ugnaught =240,
+		SP_iktotchi =241,
+		Species_Last = SP_iktotchi,
 	};
 
 public:

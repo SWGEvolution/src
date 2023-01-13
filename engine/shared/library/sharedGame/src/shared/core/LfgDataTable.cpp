@@ -289,6 +289,143 @@ namespace LfgDataTableNamespace
 	{
 		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_zabrak);
 	}
+	//add additional species
+	bool matchSpeciesAbyssin(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_abyssin);
+	}
+
+	bool matchSpeciesAqualish(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_aqualish);
+	}
+
+	bool matchSpeciesArcona(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_arcona);
+	}
+
+	bool matchSpeciesBith(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_bith);
+	}
+
+	bool matchSpeciesCerean(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_cerean);
+	}
+
+	bool matchSpeciesChiss(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_chiss);
+	}
+
+	bool matchSpeciesDevaronian(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_devaronian);
+	}
+
+	bool matchSpeciesDuros(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_duros);
+	}
+
+	bool matchSpeciesGotal(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_gotal);
+	}
+
+	bool matchSpeciesGran(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_gran);
+	}
+
+	bool matchSpeciesHutt(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_hutt);
+	}
+
+	bool matchSpeciesIktotchi(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_iktotchi);
+	}
+
+
+	bool matchSpeciesIshiTib(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_ishiTib);
+	}
+
+	bool matchSpeciesJenet(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_jenet);
+	}
+
+	bool matchSpeciesKadassa(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_kadassa);
+	}
+
+	bool matchSpeciesKelDor(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_kel_dor);
+	}
+
+	bool matchSpeciesKlatooinian(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_klatooinian);
+	}
+
+	bool matchSpeciesKubaz(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_kubaz);
+	}
+
+	bool matchSpeciesMarauder(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_marauder);
+	}
+
+	bool matchSpeciesNautolan(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_nautolan);
+	}
+
+	bool matchSpeciesNightsister(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_nightsister);
+	}
+
+	bool matchSpeciesNikto(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_nikto);
+	}
+
+	bool matchSpeciesQuarren(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_quarren);
+	}
+
+	bool matchSpeciesSMC(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_smc);
+	}
+
+	bool matchSpeciesTalz(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_talz);
+	}
+
+	bool matchSpeciesTogruta(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_togruta);
+	}
+
+	bool matchSpeciesWeequay(LfgCharacterData const & lfgCharacterData, void const *, void const *, void const *, void const *, void const *)
+	{
+		return (lfgCharacterData.species == SharedCreatureObjectTemplate::SP_weequay);
+	}
+	//end additional species
 }
 
 using namespace LfgDataTableNamespace;
@@ -336,6 +473,35 @@ void LfgDataTable::install()
 	mapInternalSearchAttributeMatchFunction["twilek"] = matchSpeciesTwilek;
 	mapInternalSearchAttributeMatchFunction["wookiee"] = matchSpeciesWookiee;
 	mapInternalSearchAttributeMatchFunction["zabrak"] = matchSpeciesZabrak;
+	//add additional species
+	mapInternalSearchAttributeMatchFunction["abyssin"] = matchSpeciesAbyssin;
+	mapInternalSearchAttributeMatchFunction["aqualish"] = matchSpeciesAqualish;
+	mapInternalSearchAttributeMatchFunction["arcona"] = matchSpeciesArcona;
+	mapInternalSearchAttributeMatchFunction["bith"] = matchSpeciesBith;
+	mapInternalSearchAttributeMatchFunction["cerean"] = matchSpeciesCerean;
+	mapInternalSearchAttributeMatchFunction["chiss"] = matchSpeciesChiss;
+	mapInternalSearchAttributeMatchFunction["devaronian"] = matchSpeciesDevaronian;
+	mapInternalSearchAttributeMatchFunction["duros"] = matchSpeciesDuros;
+	mapInternalSearchAttributeMatchFunction["gotal"] = matchSpeciesGotal;
+	mapInternalSearchAttributeMatchFunction["gran"] = matchSpeciesGran;
+	mapInternalSearchAttributeMatchFunction["hutt"] = matchSpeciesHutt;
+	mapInternalSearchAttributeMatchFunction["iktotchi"] = matchSpeciesIktotchi;
+	mapInternalSearchAttributeMatchFunction["ishi_tib"] = matchSpeciesIshiTib;
+	mapInternalSearchAttributeMatchFunction["jenet"] = matchSpeciesJenet;
+	mapInternalSearchAttributeMatchFunction["kadassa"] = matchSpeciesKadassa;
+	mapInternalSearchAttributeMatchFunction["kel_dor"] = matchSpeciesKelDor;
+	mapInternalSearchAttributeMatchFunction["klatooinian"] = matchSpeciesKlatooinian;
+	mapInternalSearchAttributeMatchFunction["kubaz"] = matchSpeciesKubaz;
+	mapInternalSearchAttributeMatchFunction["marauder"] = matchSpeciesMarauder;
+	mapInternalSearchAttributeMatchFunction["nautolan"] = matchSpeciesNautolan;
+	mapInternalSearchAttributeMatchFunction["nightsister"] = matchSpeciesNightsister;
+	mapInternalSearchAttributeMatchFunction["nikto"] = matchSpeciesNikto;
+	mapInternalSearchAttributeMatchFunction["quarren"] = matchSpeciesQuarren;
+	mapInternalSearchAttributeMatchFunction["smc"] = matchSpeciesSMC;
+	mapInternalSearchAttributeMatchFunction["talz"] = matchSpeciesTalz;
+	mapInternalSearchAttributeMatchFunction["togruta"] = matchSpeciesTogruta;
+	mapInternalSearchAttributeMatchFunction["weequay"] = matchSpeciesWeequay;
+	//end additional species
 
 	DataTable * table = DataTableManager::getTable(cs_lfgDataTableName, true);
 	if (table)

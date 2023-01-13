@@ -8955,6 +8955,33 @@ bool CreatureObject::isAppearanceEquippable(const char *appearanceTemplateName)
 			case SharedCreatureObjectTemplate::SP_bothan:      { column = 15; } break;
 			case SharedCreatureObjectTemplate::SP_ithorian:    { column = 17; } break;
 			case SharedCreatureObjectTemplate::SP_sullustan:   { column = 19; } break;
+			case SharedCreatureObjectTemplate::SP_abyssin:     { column = 21; } break;
+			case SharedCreatureObjectTemplate::SP_aqualish:    { column = 23; } break;
+			case SharedCreatureObjectTemplate::SP_arcona:	   { column = 25; } break;
+			case SharedCreatureObjectTemplate::SP_bith:        { column = 27; } break;
+			case SharedCreatureObjectTemplate::SP_cerean:      { column = 29; } break;
+			case SharedCreatureObjectTemplate::SP_chiss:	   { column = 31; } break;
+			case SharedCreatureObjectTemplate::SP_devaronian:  { column = 33; } break;
+			case SharedCreatureObjectTemplate::SP_duros:       { column = 35; } break;
+			case SharedCreatureObjectTemplate::SP_gotal:       { column = 39; } break;
+			case SharedCreatureObjectTemplate::SP_gran:        { column = 41; } break;
+			case SharedCreatureObjectTemplate::SP_hutt:        { column = 43; } break;
+			case SharedCreatureObjectTemplate::SP_iktotchi:	   { column = 45; } break;
+			case SharedCreatureObjectTemplate::SP_ishiTib:     { column = 47; } break;
+			case SharedCreatureObjectTemplate::SP_jenet:       { column = 49; } break;
+			case SharedCreatureObjectTemplate::SP_kadassa:	   { column = 51; } break;
+			case SharedCreatureObjectTemplate::SP_kel_dor:     { column = 53; } break;
+			case SharedCreatureObjectTemplate::SP_klatooinian: { column = 55; } break;
+			case SharedCreatureObjectTemplate::SP_kubaz:       { column = 57; } break;
+			case SharedCreatureObjectTemplate::SP_marauder:    { column = 59; } break;
+			case SharedCreatureObjectTemplate::SP_nautolan:    { column = 61; } break;
+			case SharedCreatureObjectTemplate::SP_nightsister: { column = 63; } break;
+			case SharedCreatureObjectTemplate::SP_nikto:	   { column = 65; } break;
+			case SharedCreatureObjectTemplate::SP_quarren:     { column = 67; } break;
+			case SharedCreatureObjectTemplate::SP_smc:         { column = 69; } break;
+			case SharedCreatureObjectTemplate::SP_talz:        { column = 71; } break;
+			case SharedCreatureObjectTemplate::SP_togruta:     { column = 73; } break;
+			case SharedCreatureObjectTemplate::SP_weequay:     { column = 75; } break;
 			default: { } break;
 		}
 

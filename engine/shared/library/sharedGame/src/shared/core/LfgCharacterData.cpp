@@ -87,6 +87,36 @@ namespace LfgCharacterDataNamespace
 	std::string const s_stat_twilek(s_stat_species_section + ".twilek");
 	std::string const s_stat_wookiee(s_stat_species_section + ".wookiee");
 	std::string const s_stat_zabrak(s_stat_species_section + ".zabrak");
+	//add additional species
+	std::string const s_stat_abyssin(s_stat_species_section + ".abyssin");
+	std::string const s_stat_aqualish(s_stat_species_section + ".aqualish");
+	std::string const s_stat_arcona(s_stat_species_section + ".arcona");
+	std::string const s_stat_bith(s_stat_species_section + ".bith");
+	std::string const s_stat_cerean(s_stat_species_section + ".cerean");
+	std::string const s_stat_chiss(s_stat_species_section + ".chiss");
+	std::string const s_stat_devaronian(s_stat_species_section + ".devaronian");
+	std::string const s_stat_duros(s_stat_species_section + ".duros");
+	std::string const s_stat_gotal(s_stat_species_section + ".gotal");
+	std::string const s_stat_gran(s_stat_species_section + ".gran");
+	std::string const s_stat_hutt(s_stat_species_section + ".hutt");
+	std::string const s_stat_iktotchi(s_stat_species_section + ".iktotchi");
+	std::string const s_stat_ishi_tib(s_stat_species_section + ".ishi_tib");
+	std::string const s_stat_jenet(s_stat_species_section + ".jenet");
+	std::string const s_stat_kadassa(s_stat_species_section + ".kadassa");
+	std::string const s_stat_kel_dor(s_stat_species_section + ".kel_dor");
+	std::string const s_stat_klatooinian(s_stat_species_section + ".klatooinian");
+	std::string const s_stat_kubaz(s_stat_species_section + ".kubaz");
+	std::string const s_stat_marauder(s_stat_species_section + ".marauder");	
+	std::string const s_stat_nautolan(s_stat_species_section + ".nautolan");
+	std::string const s_stat_nightsister(s_stat_species_section + ".nightsister");
+	std::string const s_stat_nikto(s_stat_species_section + ".nikto");
+	std::string const s_stat_quarren(s_stat_species_section + ".quarren");
+	std::string const s_stat_smc(s_stat_species_section + ".smc");
+	std::string const s_stat_talz(s_stat_species_section + ".talz");
+	std::string const s_stat_togruta(s_stat_species_section + ".togruta");
+	std::string const s_stat_weequay(s_stat_species_section + ".weequay");
+	//end additional species
+
 
 	// species by gender
 	std::string const s_stat_species_gender_section("speciesGender");
@@ -110,6 +140,39 @@ namespace LfgCharacterDataNamespace
 	std::string const s_stat_wookiee_f(s_stat_species_gender_section + ".wookiee_f");
 	std::string const s_stat_zabrak_m(s_stat_species_gender_section + ".zabrak_m");
 	std::string const s_stat_zabrak_f(s_stat_species_gender_section + ".zabrak_f");
+	//add additional species
+	std::string const s_stat_abyssin_m(s_stat_species_gender_section + ".abyssin_m");
+	std::string const s_stat_aqualish_m(s_stat_species_gender_section + ".aqualish_m");
+	std::string const s_stat_aqualish_f(s_stat_species_gender_section + ".aqualish_f");
+	std::string const s_stat_arcona_m(s_stat_species_gender_section + ".arcona_m");
+	std::string const s_stat_bith_m(s_stat_species_gender_section + ".bith_m");
+	std::string const s_stat_bith_f(s_stat_species_gender_section + ".bith_f");
+	std::string const s_stat_cerean_m(s_stat_species_gender_section + ".cerean_m");
+	std::string const s_stat_chiss_m(s_stat_species_gender_section + ".chiss_m");
+	std::string const s_stat_chiss_f(s_stat_species_gender_section + ".chiss_f");
+	std::string const s_stat_devaronian_m(s_stat_species_gender_section + ".devaronian_m");
+	std::string const s_stat_duros_m(s_stat_species_gender_section + ".duros_m");
+	std::string const s_stat_gotal_m(s_stat_species_gender_section + ".gotal_m");
+	std::string const s_stat_gran_m(s_stat_species_gender_section + ".gran_m");
+	std::string const s_stat_hutt_m(s_stat_species_gender_section + ".hutt_m");
+	std::string const s_stat_iktotchi_m(s_stat_species_gender_section + ".iktotchi_m");
+	std::string const s_stat_ishi_tib_m(s_stat_species_gender_section + ".ishi_tib_m");
+	std::string const s_stat_jenet_m(s_stat_species_gender_section + ".jenet_m");
+	std::string const s_stat_kadassa_m(s_stat_species_gender_section + ".kadassa_m");
+	std::string const s_stat_kel_dor_m(s_stat_species_gender_section + ".kel_dor_m");
+	std::string const s_stat_klatooinian_m(s_stat_species_gender_section + ".klatooinian_m");
+	std::string const s_stat_kubaz_m(s_stat_species_gender_section + ".kubaz_m");
+	std::string const s_stat_marauder_m(s_stat_species_gender_section + ".marauder_m");
+	std::string const s_stat_marauder_f(s_stat_species_gender_section + ".marauder_f");
+	std::string const s_stat_nautolan_m(s_stat_species_gender_section + ".nautolan_m");
+	std::string const s_stat_nightsister_f(s_stat_species_gender_section + ".nightsister_f");
+	std::string const s_stat_nikto_m(s_stat_species_gender_section + ".nikto_m");
+	std::string const s_stat_quarren_m(s_stat_species_gender_section + ".quarren_m");
+	std::string const s_stat_smc_f(s_stat_species_gender_section + ".smc_f");
+	std::string const s_stat_talz_m(s_stat_species_gender_section + ".talz_m");
+	std::string const s_stat_togruta_f(s_stat_species_gender_section + ".togruta_f");
+	std::string const s_stat_weequay_m(s_stat_species_gender_section + ".weequay_m");
+	//end additional species
 
 	// profession
 	std::string const s_stat_profession_section("profession");
@@ -723,6 +786,62 @@ std::string LfgCharacterData::getDebugString() const
 		output += "Wookiee";
 	else if (species == SharedCreatureObjectTemplate::SP_zabrak)
 		output += "Zabrak";
+	//add additional species
+	else if (species == SharedCreatureObjectTemplate::SP_abyssin)
+		output += "Abyssin";
+	else if (species == SharedCreatureObjectTemplate::SP_aqualish)
+		output += "Aqualish";
+	else if (species == SharedCreatureObjectTemplate::SP_arcona)
+		output += "Arcona";
+	else if (species == SharedCreatureObjectTemplate::SP_bith)
+		output += "Bith";
+	else if (species == SharedCreatureObjectTemplate::SP_cerean)
+		output += "Cerean";
+	else if (species == SharedCreatureObjectTemplate::SP_chiss)
+		output += "Chiss";
+	else if (species == SharedCreatureObjectTemplate::SP_devaronian)
+		output += "Devaronian";
+	else if (species == SharedCreatureObjectTemplate::SP_duros)
+		output += "Duros";
+	else if (species == SharedCreatureObjectTemplate::SP_gotal)
+		output += "Gotal";
+	else if (species == SharedCreatureObjectTemplate::SP_gran)
+		output += "Gran";
+	else if (species == SharedCreatureObjectTemplate::SP_hutt)
+		output += "Hutt";
+	else if (species == SharedCreatureObjectTemplate::SP_iktotchi)
+		output += "Iktotchi";
+	else if (species == SharedCreatureObjectTemplate::SP_ishiTib)
+		output += "Ishi Tib";
+	else if (species == SharedCreatureObjectTemplate::SP_jenet)
+		output += "Jenet";
+	else if (species == SharedCreatureObjectTemplate::SP_kadassa)
+		output += "Kadassa";
+	else if (species == SharedCreatureObjectTemplate::SP_kel_dor)
+		output += "Kel Dor";
+	else if (species == SharedCreatureObjectTemplate::SP_klatooinian)
+		output += "Klatooinian";
+	else if (species == SharedCreatureObjectTemplate::SP_kubaz)
+		output += "Kubaz";
+	else if (species == SharedCreatureObjectTemplate::SP_marauder)
+		output += "Marauder";
+	else if (species == SharedCreatureObjectTemplate::SP_nautolan)
+		output += "Nautolan";
+	else if (species == SharedCreatureObjectTemplate::SP_nightsister)
+		output += "Nightsister";
+	else if (species == SharedCreatureObjectTemplate::SP_nikto)
+		output += "Nikto";
+	else if (species == SharedCreatureObjectTemplate::SP_quarren)
+		output += "Quarren";
+	else if (species == SharedCreatureObjectTemplate::SP_smc)
+		output += "Singing Mountain Clan";
+	else if (species == SharedCreatureObjectTemplate::SP_talz)
+		output += "Talz";
+	else if (species == SharedCreatureObjectTemplate::SP_togruta)
+		output += "Togruta";
+	else if (species == SharedCreatureObjectTemplate::SP_weequay)
+		output += "Weequay";
+	//end additional species
 	else
 		output += FormattedString<32>().sprintf("%d", static_cast<int>(species));
  
@@ -902,6 +1021,36 @@ std::map<std::string, int> const & LfgCharacterData::calculateStatistics(std::ma
 		statistics[s_stat_twilek] = 0;
 		statistics[s_stat_wookiee] = 0;
 		statistics[s_stat_zabrak] = 0;
+		//add additional species
+		statistics[s_stat_abyssin] = 0;
+		statistics[s_stat_aqualish] = 0;
+		statistics[s_stat_arcona] = 0;
+		statistics[s_stat_bith] = 0;
+		statistics[s_stat_cerean] = 0;
+		statistics[s_stat_chiss] = 0;
+		statistics[s_stat_devaronian] = 0;
+		statistics[s_stat_duros] = 0;
+		statistics[s_stat_gotal] = 0;
+		statistics[s_stat_gran] = 0;
+		statistics[s_stat_human] = 0;
+		statistics[s_stat_iktotchi] = 0;
+		statistics[s_stat_ishi_tib] = 0;
+		statistics[s_stat_jenet] = 0;
+		statistics[s_stat_kadassa] = 0;
+		statistics[s_stat_kel_dor] = 0;
+		statistics[s_stat_klatooinian] = 0;
+		statistics[s_stat_kubaz] = 0;
+		statistics[s_stat_marauder] = 0;
+		statistics[s_stat_nautolan] = 0;
+		statistics[s_stat_nightsister] = 0;
+		statistics[s_stat_nikto] = 0;
+		statistics[s_stat_quarren] = 0;
+		statistics[s_stat_smc] = 0;
+		statistics[s_stat_talz] = 0;
+		statistics[s_stat_togruta] = 0;
+		statistics[s_stat_weequay] = 0;
+		//end additional species
+
 
 		// species by gender
 		statistics[s_stat_species_gender_section] = -1;
@@ -925,6 +1074,38 @@ std::map<std::string, int> const & LfgCharacterData::calculateStatistics(std::ma
 		statistics[s_stat_wookiee_f] = 0;
 		statistics[s_stat_zabrak_m] = 0;
 		statistics[s_stat_zabrak_f] = 0;
+		//add additional species
+		statistics[s_stat_abyssin_m] = 0;
+		statistics[s_stat_aqualish_m] = 0;
+		statistics[s_stat_aqualish_f] = 0;
+		statistics[s_stat_arcona_m] = 0;
+		statistics[s_stat_bith_m] = 0;
+		statistics[s_stat_bith_f] = 0;
+		statistics[s_stat_cerean_m] = 0;
+		statistics[s_stat_chiss_m] = 0;
+		statistics[s_stat_chiss_f] = 0;
+		statistics[s_stat_devaronian_m] = 0;
+		statistics[s_stat_duros_m] = 0;
+		statistics[s_stat_gotal_m] = 0;
+		statistics[s_stat_gran_m] = 0;
+		statistics[s_stat_hutt_m] = 0;
+		statistics[s_stat_iktotchi_m] = 0;
+		statistics[s_stat_ishi_tib_m] = 0;
+		statistics[s_stat_jenet_m] = 0;
+		statistics[s_stat_kadassa_m] = 0;
+		statistics[s_stat_kel_dor_m] = 0;
+		statistics[s_stat_klatooinian_m] = 0;
+		statistics[s_stat_kubaz_m] = 0;
+		statistics[s_stat_marauder_m] = 0;
+		statistics[s_stat_nautolan_m] = 0;
+		statistics[s_stat_nightsister_f] = 0;
+		statistics[s_stat_nikto_m] = 0;
+		statistics[s_stat_quarren_m] = 0;
+		statistics[s_stat_smc_f] = 0;
+		statistics[s_stat_talz_m] = 0;
+		statistics[s_stat_togruta_f] = 0;
+		statistics[s_stat_weequay_m] = 0;
+		//end additional species
 
 		// profession
 		statistics[s_stat_profession_section] = -1;
@@ -1281,6 +1462,205 @@ std::map<std::string, int> const & LfgCharacterData::calculateStatistics(std::ma
 			else if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
 				++(statistics[s_stat_zabrak_f]);
 		}
+		//add additional species
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_abyssin)
+		{
+			++(statistics[s_stat_abyssin]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_abyssin_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_aqualish)
+		{
+			++(statistics[s_stat_aqualish]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_aqualish_m]);
+			else if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_aqualish_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_arcona)
+		{
+			++(statistics[s_stat_arcona]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_arcona_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_bith)
+		{
+			++(statistics[s_stat_bith]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_bith_m]);
+			else if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_bith_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_cerean)
+		{
+			++(statistics[s_stat_cerean]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_cerean_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_chiss)
+		{
+			++(statistics[s_stat_chiss]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_chiss_m]);
+			else if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_chiss_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_devaronian)
+		{
+			++(statistics[s_stat_devaronian]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_devaronian_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_duros)
+		{
+			++(statistics[s_stat_duros]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_duros_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_gotal)
+		{
+			++(statistics[s_stat_gotal]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_gotal_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_gran)
+		{
+			++(statistics[s_stat_gran]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_gran_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_hutt)
+		{
+			++(statistics[s_stat_hutt]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_hutt_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_iktotchi)
+		{
+			++(statistics[s_stat_iktotchi]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_iktotchi_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_ishiTib)
+		{
+			++(statistics[s_stat_ishi_tib]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_ishi_tib_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_jenet)
+		{
+			++(statistics[s_stat_jenet]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_jenet_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_kadassa)
+		{
+			++(statistics[s_stat_kadassa]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_kadassa_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_kel_dor)
+		{
+			++(statistics[s_stat_kel_dor]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_kel_dor_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_klatooinian)
+		{
+			++(statistics[s_stat_klatooinian]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_klatooinian_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_kubaz)
+		{
+			++(statistics[s_stat_kubaz]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_kubaz_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_marauder)
+		{
+			++(statistics[s_stat_marauder]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_marauder_m]);
+			else if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_marauder_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_nautolan)
+		{
+			++(statistics[s_stat_nautolan]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_nautolan_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_nightsister)
+		{
+			++(statistics[s_stat_nightsister]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_nightsister_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_nikto)
+		{
+			++(statistics[s_stat_nikto]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_nikto_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_quarren)
+		{
+			++(statistics[s_stat_quarren]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_quarren_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_smc)
+		{
+			++(statistics[s_stat_smc]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_smc_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_talz)
+		{
+			++(statistics[s_stat_talz]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_talz_m]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_togruta)
+		{
+			++(statistics[s_stat_togruta]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_female)
+				++(statistics[s_stat_togruta_f]);
+		}
+		else if (iterLfgData->second.species == SharedCreatureObjectTemplate::SP_weequay)
+		{
+			++(statistics[s_stat_weequay]);
+
+			if (iterLfgData->second.gender == SharedCreatureObjectTemplate::GE_male)
+				++(statistics[s_stat_weequay_m]);
+		}
+		//end additional species
 
 		// profession and profession by gender
 		if (iterLfgData->second.profession == LfgCharacterData::Prof_Bh)

@@ -191,12 +191,21 @@ bool ServerImageDesignerManager::makeChanges(SharedImageDesignerManager::Session
 				std::map<std::string, HairData>::iterator a = ms_hairNameToHairData.find(session.newHairAsset);
 				if(a != ms_hairNameToHairData.end())
 				{
-					if(strcmp(recipient->getTemplateName(), a->second.characterTemplate.c_str()) == 0)
+					
+					//check that designer has the required skill mods
+					SharedImageDesignerManager::SkillMods const mods = getSkillModsForDesigner(designer->getNetworkId());
+					if(mods.hairSkillMod >= a->second.requiredHairSkillMod)
+						newHairOk = true;
+
+					//getHairCustomizations is already looping through valid hair selections while this will only return one species per hair style
+					//also the server will already double check hair upon every login
+					/*if(strcmp(recipient->getTemplateName(), a->second.characterTemplate.c_str()) == 0)
 					{
 						SharedImageDesignerManager::SkillMods const mods = getSkillModsForDesigner(designer->getNetworkId());
 						if(mods.hairSkillMod >= a->second.requiredHairSkillMod)
 							newHairOk = true;
-					}
+					}*/
+
 				}
 				if(!newHairOk)
 				{
