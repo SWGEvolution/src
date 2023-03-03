@@ -247,6 +247,16 @@ void LoginServerConnection::onReceive(const Archive::ByteStream & message)
 			
 			break;
 		}
+		case constcrc("TransferChangeSpeciesReplyFromLoginServer") :
+		{
+			GenericValueTypeMessage<TransferCharacterData> replyFromLoginServer(ri);
+			LOG("CustomerService", ("CharacterTransfer: Received TransferChangeSpeciesReplyFromLoginServer : %s", replyFromLoginServer.getValue().toString().c_str()));
+			
+			GenericValueTypeMessage<TransferCharacterData> reply("TransferChangeSpeciesReply", replyFromLoginServer.getValue());
+			CentralServer::getInstance().sendToTransferServer(reply);
+			
+			break;
+		}
 		case constcrc("TransferAccountRequestCentralDatabase") :
 		{
 			// got message back from loginServer - have to transfer to DBProcess to update the game database

@@ -24,6 +24,7 @@
 #include "TaskRegisterNewCluster.h"
 #include "TaskRenameCharacter.h"
 #include "TaskRestoreCharacter.h"
+#include "TaskChangeSpecies.h"
 #include "TaskSetPurgeStatus.h"
 #include "TaskToggleCharacterDisable.h"
 #include "TaskToggleCompletedTutorial.h"
@@ -191,7 +192,8 @@ void DatabaseConnection::renameCharacter(uint32 clusterId, const NetworkId &char
 	m_taskQueue->asyncRequest(new TaskRenameCharacter(clusterId, characterId, newName, requestData));
 }
 
-// ----------------------------------------------------------------------
+// ---------------------------------------------------------------------
+
 
 void DatabaseConnection::requestAvatarListAccountTransfer(const TransferAccountData * requestData)
 {
@@ -356,3 +358,11 @@ void DatabaseConnection::featureIdTransactionSyncUpdate(uint32 clusterId, Statio
 }
 
 // ======================================================================
+
+void DatabaseConnection::changeSpecies(uint32 clusterId, const NetworkId &characterId, const Unicode::String &newSpeciesTemplate, const TransferCharacterData * requestData)
+{
+	NOT_NULL(m_taskQueue);
+	m_taskQueue->asyncRequest(new TaskChangeSpecies(clusterId, characterId, newSpeciesTemplate, requestData));
+}
+
+// ----------------------------------------------------------------------

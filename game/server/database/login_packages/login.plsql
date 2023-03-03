@@ -12,6 +12,7 @@ as
 	function is_account_at_limit(p_station_id number) return number;
 	procedure delete_character(p_cluster_id number, p_character_id number, p_station_id number);
 	procedure rename_character(p_cluster_id number, p_character_id number, p_new_name varchar2);
+	procedure change_species(p_cluster_id number, p_character_id number, p_new_species_template varchar2);
 	procedure create_character(p_cluster_id number, p_station_id number, p_character_name varchar2, p_character_id number, p_template_id number, p_character_type number);
 	function restore_character(p_cluster_id number, p_station_id number, p_character_name varchar2, p_character_id number, p_template_id number, p_character_type number) return number;
 	procedure set_character_slots(p_cluster_id number, p_station_id number, p_slot_type number, p_num_slots number);
@@ -252,6 +253,24 @@ as
 		set character_name = p_new_name
 		where cluster_id = p_cluster_id
 		and object_id = p_character_id;
+	end;
+
+	procedure change_species(p_cluster_id number, p_character_id number, p_new_species_template varchar2)
+	as
+	begin
+		update swg_characters
+		set template_id = (select id from object_templates t where t.name=p_new_species_template)
+		where cluster_id = p_cluster_id
+		and object_id = p_character_id;
+		
+		update character_view
+        	set object_template_id = (select id from object_templates t where t.name=p_new_species_template)
+        	where character_object = p_character_id;
+
+		update tangible_objects
+		set appearance_data = null
+		where object_id = p_character_id;
+
 	end;
 
 	procedure create_character(p_cluster_id number, p_station_id number, p_character_name varchar2, p_character_id number, p_template_id number, p_character_type number)

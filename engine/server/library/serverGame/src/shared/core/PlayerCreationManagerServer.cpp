@@ -17,6 +17,7 @@
 #include "serverGame/ServerCreatureObjectTemplate.h"
 #include "serverGame/ServerWorld.h"
 #include "serverNetworkMessages/RenameCharacterMessage.h"
+#include "serverNetworkMessages/ChangeSpeciesMessage.h"
 #include "sharedFoundation/ConfigFile.h"
 #include "sharedFoundation/DynamicVariableList.h"
 #include "sharedObject/ObjectTemplate.h"
@@ -223,6 +224,17 @@ void PlayerCreationManagerServer::renamePlayer(int8 renameCharacterMessageSource
 		return;
 
 	RenameCharacterMessageEx const msg(static_cast<RenameCharacterMessageEx::RenameCharacterMessageSource>(renameCharacterMessageSource),stationId,oid,newName,oldName,requestedBy);
+	GameServer::getInstance().sendToDatabaseServer(msg);
+}
+
+//======================================================================
+
+void PlayerCreationManagerServer::changeSpecies(int8 changeSpeciesMessageSource, uint32 stationId, const NetworkId & oid, const Unicode::String & newSpeciesTemplate, const NetworkId &requestedBy)
+{
+	if (!NameManager::getInstance().isPlayer(oid))
+		return;
+
+	ChangeSpeciesMessageEx const msg(static_cast<ChangeSpeciesMessageEx::ChangeSpeciesMessageSource>(changeSpeciesMessageSource),stationId,oid,newSpeciesTemplate,requestedBy);
 	GameServer::getInstance().sendToDatabaseServer(msg);
 }
 

@@ -9,6 +9,7 @@
 #include "serverDatabase/Persister.h"
 
 #include "serverDatabase/CentralServerConnection.h"
+#include "serverDatabase/ChangeSpeciesCustomPersistStep.h"
 #include "serverDatabase/CommoditiesServerConnection.h"
 #include "serverDatabase/ConfigServerDatabase.h"
 #include "serverDatabase/CreateCharacterCustomPersistStep.h"
@@ -37,6 +38,7 @@
 #include "serverNetworkMessages/CMUpdateAuctionMessage.h"
 #include "serverNetworkMessages/CMUpdateLocationMessage.h"
 #include "serverNetworkMessages/CentralGameServerMessages.h"
+#include "serverNetworkMessages/ChangeSpeciesMessage.h"
 #include "serverNetworkMessages/CreateObjectMessage.h"
 #include "serverNetworkMessages/CSDBNetMessages.h"
 #include "serverNetworkMessages/EndBaselinesMessage.h"
@@ -132,6 +134,7 @@ Persister::Persister() :
 	connectToMessage("BaselinesMessage");
 	connectToMessage("BountyHunterTargetMessage");
 	connectToMessage("CentralRequestSave");
+	connectToMessage("ChangeSpeciesMessageEx");
 	connectToMessage("ClusterShutdownMessage");
 	connectToMessage("CMCreateAuctionBidMessage");
 	connectToMessage("CMCreateAuctionMessage");
@@ -758,6 +761,14 @@ void Persister::receiveMessage(const MessageDispatch::Emitter & source, const Me
 			renameCharacter(sourceGameServer, static_cast<int8>(msg.getRenameCharacterMessageSource()), msg.getStationId(), msg.getCharacterId(), msg.getNewName(), msg.getOldName(), msg.getLastNameChangeOnly(), msg.getRequestedBy(), nullptr);
 			break;
 		}
+		case constcrc("ChangeSpeciesMessageEx") :
+		{
+			auto ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
+			ChangeSpeciesMessageEx msg(ri);
+
+			changeSpecies(sourceGameServer, static_cast<int8>(msg.getChangeSpeciesMessageSource()), msg.getStationId(), msg.getCharacterId(), msg.getNewSpeciesTemplate(), msg.getRequestedBy(), nullptr);
+			break;
+		}
 		case constcrc("UnloadedPlayerMessage") :
 		{
 			auto ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
@@ -1244,6 +1255,22 @@ void Persister::handlePurgeCompleteMessage(uint32 const serverId, StationId stat
 {
 	PurgeCompleteCustomPersistStep * cps = new PurgeCompleteCustomPersistStep(stationId);
 	getSnapshotForServer(serverId)->addCustomPersistStep(cps);
+}
+
+// ----------------------------------------------------------------------
+
+void Persister::changeSpecies(uint32 sourceServer, int8 changeSpeciesMessageSource, uint32 stationId, const NetworkId &characterId, const Unicode::String &newSpeciesTemplate, const NetworkId &requestedBy, const TransferCharacterData * changeSpeciesRequest)
+{
+	// don't queue up another request for the character
+	if (ChangeSpeciesCustomPersistStep::hasPendingChangeSpeciesCustomPersistStep(characterId))
+	{
+
+		return;
+	}
+
+	ChangeSpeciesCustomPersistStep *cps = new ChangeSpeciesCustomPersistStep(changeSpeciesMessageSource, stationId, characterId, newSpeciesTemplate, requestedBy, changeSpeciesRequest);
+	getSnapshotForServer(sourceServer)->addCustomPersistStep(cps);
+
 }
 
 // ======================================================================

@@ -41,6 +41,7 @@ public:
 	const std::string &                 getCustomerLocalizedLanguage  () const;
 	const NetworkId &                   getDestinationCharacterId     () const;
 	const std::string &                 getDestinationCharacterName   () const;
+	const std::string &                 getNewSpeciesTemplate         () const;
 	const std::string &                 getDestinationGalaxy          () const;
 	unsigned int                        getDestinationStationId       () const;
 	const std::string &                 getScene                      () const;
@@ -76,6 +77,7 @@ public:
 	void                                setCustomerLocalizedLanguage  (const std::string & locale);
 	void                                setDestinationCharacterId     (const NetworkId & destinationCharacterId);
 	void                                setDestinationCharacterName   (const std::string & destinationCharacterName);
+	void                                setNewSpeciesTemplate         (const std::string & destinationCharacterName);
 	void                                setDestinationGalaxy          (const std::string & destinationGalaxy);
 	void                                setDestinationStationId       (const unsigned int destinationStationId);
 	void                                setScene                      (const std::string & scene);

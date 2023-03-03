@@ -195,6 +195,14 @@ void CentralServerConnection::onReceive(const Archive::ByteStream & message)
 			DatabaseConnection::getInstance().renameCharacter(getClusterId(), requestData.getCharacterId(), Unicode::narrowToWide(requestData.getDestinationCharacterName()), &requestData);
 			break;
 		}
+		case constcrc("TransferChangeSpeciesInLoginDatabase") :
+		{
+			const GenericValueTypeMessage<TransferCharacterData> request(ri);
+			LOG("CustomerService", ("CharacterTransfer: Received TransferChangeSpeciesInLoginDatabase : %s", request.getValue().toString().c_str()));
+			const TransferCharacterData & requestData = request.getValue();
+			DatabaseConnection::getInstance().changeSpecies(getClusterId(), requestData.getCharacterId(), Unicode::narrowToWide(requestData.getObjectTemplateName()), &requestData);
+			break;
+		}
 		case constcrc("TransferKickConnectedClients") :
 		{
 			const GenericValueTypeMessage<unsigned int> kick(ri);

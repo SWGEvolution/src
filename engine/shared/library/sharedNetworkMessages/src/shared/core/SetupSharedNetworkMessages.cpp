@@ -29,6 +29,7 @@
 #include "sharedNetworkMessages/IncubatorCommitMessage.h"
 #include "sharedNetworkMessages/IncubatorStartMessage.h"
 #include "sharedNetworkMessages/MessageQueueChangeRoleIconChoice.h"
+#include "sharedNetworkMessages/MessageQueueChangeSpecies.h"
 #include "sharedNetworkMessages/MessageQueueCombatSpam.h"
 #include "sharedNetworkMessages/MessageQueueCommandQueueEnqueue.h"
 #include "sharedNetworkMessages/MessageQueueCommandQueueRemove.h"
@@ -321,6 +322,7 @@ void SetupSharedNetworkMessages::install ()
 	MessageQueueSelectProfessionTemplate::install();
 	MessageQueueSelectCurrentWorkingSkill::install();
 	MessageQueueChangeRoleIconChoice::install();
+	MessageQueueChangeSpecies::install();
 	MessageQueueCombatSpam::install();
 	MessageQueueCommandQueueEnqueue::install();
 	MessageQueueCommandQueueRemove::install();

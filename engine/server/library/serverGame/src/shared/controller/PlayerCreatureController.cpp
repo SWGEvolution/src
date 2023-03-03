@@ -23,13 +23,17 @@
 #include "serverGame/MissionObject.h"
 #include "serverGame/NameManager.h"
 #include "serverGame/PlanetObject.h"
+#include "serverGame/PlayerCreationManagerServer.h"
 #include "serverGame/PlayerObject.h"
 #include "serverGame/ServerBuffBuilderManager.h"
 #include "serverGame/ServerImageDesignerManager.h"
+#include "serverGame/ServerObject.h"
 #include "serverGame/ServerSecureTrade.h"
 #include "serverGame/ServerUniverse.h"
 #include "serverGame/ServerWorld.h"
 #include "serverGame/ShipObject.h"
+#include "serverNetworkMessages/CentralGameServerMessages.h"
+#include "serverNetworkMessages/ChangeSpeciesMessage.h"
 #include "serverScript/GameScriptObject.h"
 #include "serverScript/ScriptDictionary.h"
 #include "serverScript/ScriptParameters.h"
@@ -53,6 +57,7 @@
 #include "sharedNetworkMessages/GenericValueTypeMessage.h"
 #include "sharedNetworkMessages/ImageDesignChangeMessage.h"
 #include "sharedNetworkMessages/MessageQueueChangeRoleIconChoice.h"
+#include "sharedNetworkMessages/MessageQueueChangeSpecies.h"
 #include "sharedNetworkMessages/MessageQueueCraftCustomization.h"
 #include "sharedNetworkMessages/MessageQueueCraftEmptySlot.h"
 #include "sharedNetworkMessages/MessageQueueCraftFillSlot.h"
@@ -98,6 +103,7 @@
 #include "sharedUtility/ValueTypeString.h"
 
 #include <limits>
+
 
 // ======================================================================
 
@@ -1715,6 +1721,27 @@ void PlayerCreatureController::handleMessage (const int message, const float val
 			if (owner->isAuthoritative() && playerOwner)
 			{
 				playerOwner->setWorkingSkill(msg->getCurrentWorkingSkill(), true);
+			}
+		}
+		break;
+
+	case CM_setSpeciesTemplate:
+		{
+			MessageQueueChangeSpecies const * const msg = NON_NULL(dynamic_cast<MessageQueueChangeSpecies const *>(data));
+			if (owner->isAuthoritative() && playerOwner)
+			{
+				CreatureObject * const creatureOwner = NON_NULL(getCreature());
+				PlayerObject const * const playerObject = getPlayerObject(creatureOwner);
+				NetworkId player;
+				if (!playerObject)
+				{
+					break;
+				}
+				PlayerCreationManagerServer::changeSpecies(static_cast<int8>(ChangeSpeciesMessageEx::CSMS_player_request), NameManager::getInstance().getPlayerStationId(player), creatureOwner->getNetworkId(), Unicode::narrowToWide(msg->getSpeciesTemplate()), NetworkId::cms_invalid);
+        		ServerObject* const owner = static_cast<ServerObject*>(getOwner());
+        		owner->unload();
+        		owner->disconnect();
+
 			}
 		}
 		break;

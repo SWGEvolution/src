@@ -85,6 +85,7 @@ class Persister : public MessageDispatch::Receiver
 	void unloadCharacter(const NetworkId &characterId, uint32 sourceServer);
 	bool hasDataForObject(const NetworkId &objectId) const;
 	void renameCharacter(uint32 sourceServer, int8 renameCharacterMessageSource, uint32 stationId, const NetworkId &characterId, const Unicode::String &newName, const Unicode::String &oldName, bool lastNameChangeOnly, const NetworkId &requestedBy, const TransferCharacterData * renameRequest);
+	void changeSpecies(uint32 sourceServer, int8 changeSpeciesMessageSource, uint32 stationId, const NetworkId &characterId, const Unicode::String &newSpeciesTemplate, const NetworkId &requestedBy, const TransferCharacterData * changeSpeciesRequest);
 	void changeStationId(const TransferAccountData * transferRequest);
 	
 	void handleCSRequest( const DBCSRequestMessage & msg );

@@ -186,6 +186,17 @@ void GameServerConnection::onReceive(Archive::ByteStream const &message)
 			}
 			break;
 		}
+		case constcrc("TransferChangeSpeciesReplyFromDatabase") :
+		{
+			GenericValueTypeMessage<TransferCharacterData> const changeSpeciesReplyFromDatabase(ri);
+			LOG("CustomerService", ("CharacterTransfer: Received TransferChangeSpeciesReplyFromDatabase %s", changeSpeciesReplyFromDatabase.getValue().toString().c_str()));
+				
+			// forward to LoginServer
+			LOG("CustomerService", ("CharacterTransfer: Sending TransferChangeSpeciesInLoginDatabase request to Login Database"));
+			GenericValueTypeMessage<TransferCharacterData> const request("TransferChangeSpeciesdInLoginDatabase", changeSpeciesReplyFromDatabase.getValue());
+			CentralServer::getInstance().sendToArbitraryLoginServer(request);
+			break;
+		}
 		case constcrc("LocateObject") :
 		{
 			GenericValueTypeMessage<std::pair<uint32, std::pair<NetworkId, NetworkId> > > const msg(ri);

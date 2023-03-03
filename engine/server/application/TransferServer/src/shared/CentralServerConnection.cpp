@@ -377,6 +377,13 @@ void CentralServerConnection::onReceive(const Archive::ByteStream & message)
 			}
 			break;
 		}
+		case constcrc("TransferChangeSpeciesReply") :
+		{
+			const GenericValueTypeMessage<TransferCharacterData> reply(ri);
+			LOG("CustomerService", ("CharacterTransfer: Received TransferChangeSpeciesReply from Central Server : %s", reply.getValue().toString().c_str()));
+
+			break;
+		}
 		case constcrc("TransferAccountReplySuccessTransferServer") :
 		{
 			const GenericValueTypeMessage<TransferAccountData> reply(ri);

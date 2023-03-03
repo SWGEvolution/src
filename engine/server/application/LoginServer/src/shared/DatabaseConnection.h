@@ -51,6 +51,7 @@ class DatabaseConnection : public Singleton<DatabaseConnection>
 	void deleteCharacter               (uint32 clusterId, const NetworkId &characterId, StationId stationId);
 	void deleteAllCharacters           (StationId stationId);
 	void renameCharacter               (uint32 clusterId, const NetworkId &characterId, const Unicode::String &newName, const TransferCharacterData * requestData);
+	void changeSpecies		   (uint32 clusterId, const NetworkId &characterId, const Unicode::String &newSpeciesTemplate, const TransferCharacterData * requestData);
 	void requestAvatarListAccountTransfer (const TransferAccountData * requestData);
 	void onAvatarListRetrievedAccountTransfer (const AvatarList &avatars, TransferAccountData * transferAccountData);
 	void changeStationId               (StationId sourceStationId, StationId destinationStationId, const TransferAccountData * const transferAccountData);

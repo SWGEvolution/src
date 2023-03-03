@@ -32,6 +32,8 @@ set(SHARED_SOURCES
     shared/PurgeManager.h
     shared/SessionApiClient.cpp
     shared/SessionApiClient.h
+    shared/TaskChangeSpecies.cpp
+    shared/TaskChangeSpecies.h
     shared/TaskChangeStationId.cpp
     shared/TaskChangeStationId.h
     shared/TaskClaimRewards.cpp

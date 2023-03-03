@@ -379,6 +379,8 @@ set(SHARED_SOURCES
 	shared/gameGameServer/ReloadScriptMessage.h
 	shared/gameGameServer/ReloadTemplateMessage.cpp
 	shared/gameGameServer/ReloadTemplateMessage.h
+	shared/gameGameServer/ChangeSpeciesMessage.cpp
+	shared/gameGameServer/ChangeSpeciesMessage.h
 	shared/gameGameServer/RenameCharacterMessage.cpp
 	shared/gameGameServer/RenameCharacterMessage.h
 	shared/gameGameServer/RequestBiographyMessage.cpp

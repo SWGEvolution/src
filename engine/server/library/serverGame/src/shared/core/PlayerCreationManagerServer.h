@@ -26,6 +26,7 @@ public:
 
 	static bool                   setupPlayer(CreatureObject & obj, const std::string & profession, StationId account, bool isJedi);
 	static void                   renamePlayer(int8 renameCharacterMessageSource, uint32 stationId, const NetworkId & oid, const Unicode::String & newName, const Unicode::String & oldName, const NetworkId &requestedBy);
+	static void                   changeSpecies(int8 changeSpeciesMessageSource, uint32 stationId, const NetworkId & oid, const Unicode::String & newSpeciesTemplate, const NetworkId &requestedBy);
 };
 
 //======================================================================

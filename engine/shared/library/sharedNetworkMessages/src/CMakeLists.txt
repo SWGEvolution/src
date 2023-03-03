@@ -295,6 +295,8 @@ set(SHARED_SOURCES
 	shared/clientGameServer/MapLocationArchive.h
 	shared/clientGameServer/MessageQueueChangeRoleIconChoice.cpp
 	shared/clientGameServer/MessageQueueChangeRoleIconChoice.h
+	shared/clientGameServer/MessageQueueChangeSpecies.cpp
+	shared/clientGameServer/MessageQueueChangeSpecies.h
 	shared/clientGameServer/MessageQueueCombatCommand.cpp
 	shared/clientGameServer/MessageQueueCombatCommand.h
 	shared/clientGameServer/MessageQueueCombatSpam.cpp

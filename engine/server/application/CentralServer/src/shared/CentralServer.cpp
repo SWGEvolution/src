@@ -35,6 +35,7 @@
 #include "serverNetworkMessages/CentralPingMessage.h"
 #include "serverNetworkMessages/CentralPlanetServerConnect.h"
 #include "serverNetworkMessages/CentralTaskMessages.h"
+#include "serverNetworkMessages/ChangeSpeciesMessage.h"
 #include "serverNetworkMessages/CharacterListMessage.h"
 #include "serverNetworkMessages/ChatServerOnline.h"
 #include "serverNetworkMessages/ChunkObjectListMessage.h"
@@ -151,6 +152,7 @@ namespace CentralServerNamespace
 
 	std::map<StationId, uint32> m_purgeAccountToLoginServerMap;
 	std::map<NetworkId, std::pair<time_t, int> > s_pendingRenameCharacter;
+	std::map<NetworkId, std::pair<time_t, int> > s_pendingChangeSpecies;
 }
 
 using namespace CentralServerNamespace;
@@ -350,6 +352,9 @@ m_timeCharacterMatchStatisticsNextRefresh(0)
 	connectToMessage("DatabaseBackloggedMessage");
 
 	connectToMessage("UpdatePlayerCountMessage");
+	connectToMessage("ChangeSpeciesMessageEx");
+	connectToMessage("ChangeSpeciesRequestSubmitted");
+	connectToMessage("ChangeSpeciesRequestCompleted");
 	connectToMessage("RenameCharacterMessageEx");
 	connectToMessage("PlayerRenameRequestSubmitted");
 	connectToMessage("PlayerRenameRequestCompleted");
@@ -1935,6 +1940,57 @@ void CentralServer::receiveMessage(const MessageDispatch::Emitter & source, cons
 			if (iterFind != s_pendingRenameCharacter.end()) {
 				if (iterFind->second.second <= 1) {
 					s_pendingRenameCharacter.erase(iterFind);
+				}
+				else {
+					--(iterFind->second.second);
+				}
+			}
+			break;
+		}
+		case constcrc("ChangeSpeciesMessageEx") : {
+			Archive::ReadIterator ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
+			ChangeSpeciesMessageEx msg(ri);
+
+			IGNORE_RETURN(sendToArbitraryLoginServer(ChangeSpeciesMessage(msg.getCharacterId(), msg.getNewSpeciesTemplate(), msg
+					.getRequestedBy())));
+
+			break;
+		}
+		case constcrc("ChangeSpeciesRequestSubmitted") : {
+			Archive::ReadIterator ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
+			GenericValueTypeMessage < std::pair < unsigned
+			int, std::pair < NetworkId, std::pair < std::string, bool > > > >
+			const msg(ri);
+
+			GenericValueTypeMessage<unsigned int> kick("TransferKickConnectedClients", msg.getValue().first);
+			CentralServer::getInstance().sendToAllLoginServers(kick);
+			CentralServer::getInstance().sendToAllConnectionServers(kick, true);
+
+			// update the list of pending requests, to prevent a character with a pending request from logging in
+			std::map < NetworkId, std::pair < time_t, int > > ::iterator
+			const iterFind = s_pendingChangeSpecies.find(msg.getValue().second.first);
+			if (iterFind != s_pendingChangeSpecies.end()) {
+				++(iterFind->second.second);
+				iterFind->second.first = ::time(nullptr) + 3600; // 1 hour timeout
+			}
+			else {
+				s_pendingChangeSpecies
+						.insert(std::make_pair(msg.getValue().second.first, std::make_pair((::time(nullptr) +
+						                                                                    3600), 1))); // 1 hour timeout
+			}
+
+			break;
+		}
+		case constcrc("ChangeSpeciesRequestCompleted") : {
+			Archive::ReadIterator ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
+			GenericValueTypeMessage <std::pair<unsigned int, NetworkId>> const msg(ri);
+
+			// update the list of pending requests, to prevent a character with a pending request from logging in
+			std::map < NetworkId, std::pair < time_t, int > > ::iterator
+			const iterFind = s_pendingChangeSpecies.find(msg.getValue().second);
+			if (iterFind != s_pendingChangeSpecies.end()) {
+				if (iterFind->second.second <= 1) {
+					s_pendingChangeSpecies.erase(iterFind);
 				}
 				else {
 					--(iterFind->second.second);

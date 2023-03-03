@@ -83,6 +83,8 @@ set(SHARED_SOURCES
 	shared/Persister.h
 	shared/PreloadListQuery.cpp
 	shared/PreloadListQuery.h
+	shared/ChangeSpeciesCustomPersistStep.cpp
+	shared/ChangeSpeciesCustomPersistStep.h
 	shared/RenameCharacterCustomPersistStep.cpp
 	shared/RenameCharacterCustomPersistStep.h
 	shared/SaveTimestampQuery.cpp

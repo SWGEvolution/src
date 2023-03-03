@@ -966,6 +966,7 @@ enum GameControllerMessage
 
 	CM_setCurrentWorkingSkill, // 1115
 	CM_setProfessionTemplate,
+	CM_setSpeciesTemplate,
 	CM_resetHateTimer,
 	CM_autoExpireHateListTargetEnabled,
 

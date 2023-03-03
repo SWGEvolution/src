@@ -29,6 +29,7 @@
 #include "serverNetworkMessages/AccountFeatureIdResponse.h"
 #include "serverNetworkMessages/AdjustAccountFeatureIdRequest.h"
 #include "serverNetworkMessages/AdjustAccountFeatureIdResponse.h"
+#include "serverNetworkMessages/ChangeSpeciesMessage.h"
 #include "serverNetworkMessages/ClaimRewardsMessage.h"
 #include "serverNetworkMessages/ClaimRewardsReplyMessage.h"
 #include "serverNetworkMessages/ConnectionServerDown.h"
@@ -165,6 +166,7 @@ LoginServer::LoginServer()
     connectToMessage("LoginUpgradeAccountMessage");
     connectToMessage("PreloadFinishedMessage");
     connectToMessage("PurgeCompleteMessage");
+    connectToMessage("ChangeSpeciesMessage");
     connectToMessage("RenameCharacterMessage");
     connectToMessage("TransferRequestMoveValidation");
     connectToMessage("TransferReplyNameValidation");
@@ -750,6 +752,19 @@ void LoginServer::receiveMessage(const MessageDispatch::Emitter &source, const M
                 DatabaseConnection::getInstance().renameCharacter(conn->getClusterId(), msg.getCharacterId(), msg.getNewName(), nullptr);
             } else {
                 WARNING_STRICT_FATAL(true, ("Got RenameCharacterMessage from something other than CentralServerConnection.\n"));
+            }
+
+            break;
+        }
+	case constcrc("ChangeSpeciesMessage") : {
+            Archive::ReadIterator ri = static_cast<const GameNetworkMessage &>(message).getByteStream().begin();
+            ChangeSpeciesMessage msg(ri);
+
+            const CentralServerConnection *conn = dynamic_cast<const CentralServerConnection *>(&source);
+            if (conn) {
+                DatabaseConnection::getInstance().changeSpecies(conn->getClusterId(), msg.getCharacterId(), msg.getNewSpeciesTemplate(), nullptr);
+            } else {
+                WARNING_STRICT_FATAL(true, ("Got ChangeSpeciesMessage from something other than CentralServerConnection.\n"));
             }
 
             break;
